@@ -91,16 +91,19 @@ const fetchNotes = () => {
       const{ id, title, desc} = notes[i];
   
       notesList.innerHTML +=   ` <div class="bg-slate-300 md:p-5 p-2">
-                                    <div class="flex justify-between p-2 text-black">
-                                        <h4 title='${title}' class="text-lg font-bold inline"> ${title.length>20?title.slice(0,20)+'...': title } </h4>
-                                        <div class="text-xl px-1">
-                                            <label for="my-edit-modal" onclick="editModal('${id}')" title="Edit" class="text-green-700 cursor-pointer"><i class="fa-regular fa-pen-to-square"></i></label>
-                                            <button onclick="deleteNotes('${id}')" title="Delete" class="text-red-700"><i class="fa-regular fa-trash-can"></i></button>
-                                        </div>
+                                    <div class="flex justify-between p-2">
+                                      <div></div>
+                                      <div class="text-xl px-1">
+                                      <label for="my-edit-modal" onclick="editModal('${id}')" title="Edit" class="text-green-700 cursor-pointer"><i class="fa-regular fa-pen-to-square"></i></label>
+                                      <button onclick="deleteNotes('${id}')" title="Delete" class="text-red-700"><i class="fa-regular fa-trash-can"></i></button>
+                                      </div>
                                     </div>
-                                    <p title='${desc}' class="w-full resize-none p-2 bg-transparent text-black max-h-96 overflow-hidden" >
-                                    ${desc.length>800?desc.slice(0,820)+'...': desc }
-                                    </p>
+                                    <div class="max-h-96  text-black overflow-x-hidden " >
+                                      <h4 title='${title}' class="text-lg font-bold "> ${ title } </h4>
+                                      <p title='${desc}' class="w-full resize-none p-2 bg-transparent" >
+                                      ${desc}
+                                      </p>
+                                    </div>
                                 </div>
                                 
                                
@@ -109,3 +112,5 @@ const fetchNotes = () => {
   };
 
   fetchNotes();
+
+  // ${desc.length>800?desc.slice(0,820)+'...': desc }
