@@ -98,7 +98,7 @@ const fetchNotes = () => {
                                       <button onclick="deleteNotes('${id}')" title="Delete" class="text-red-700"><i class="fa-regular fa-trash-can"></i></button>
                                       </div>
                                     </div>
-                                    <div class="max-h-96  text-black overflow-x-hidden " >
+                                    <div class="max-h-96 text-black overflow-x-hidden scroll-style px-2" >
                                       <h4 title='${title}' class="text-lg font-bold "> ${ title } </h4>
                                       <p title='${desc}' class="w-full resize-none p-2 bg-transparent" >
                                       ${desc}
